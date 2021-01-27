@@ -2,14 +2,18 @@ import XCTest
 @testable import ResourcesSPM
 
 final class ResourcesSPMTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(ResourcesSPM().text, "Hello, World!")
+    func testColorAssets() {
+        XCTAssertNotNil(UIColor.customColor)
+        XCTAssertNil(UIColor(named: "noCustomColor", in: Bundle.main, compatibleWith: nil))
     }
-
+    
+    func testJsonFile() {
+        let jsonFile = JsonFile.read()
+        XCTAssertNotNil(jsonFile)
+    }
+    
     static var allTests = [
-        ("testExample", testExample),
+        ("testColorAssets", testColorAssets),
+        ("testJsonFile", testJsonFile),
     ]
 }
