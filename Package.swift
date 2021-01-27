@@ -23,9 +23,15 @@ let package = Package(
             name: "ResourcesSPM",
             dependencies: [],
             resources: [.process("Resources/jsonFile.json")]),
+        .target(
+            name: "External",
+            dependencies: ["ResourcesSPM"]),
         
         .testTarget(
             name: "ResourcesSPMTests",
             dependencies: ["ResourcesSPM"]),
+        .testTarget(
+            name: "ExternalTests",
+            dependencies: ["External"]),
     ]
 )
