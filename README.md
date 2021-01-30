@@ -1,3 +1,3 @@
 # ResourcesSPM
 
-A description of this package.
+Using Resources in a Swift Package
